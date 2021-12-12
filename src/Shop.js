@@ -1,11 +1,11 @@
 import Nav from "./Nav";
-
+import Cards from "./Cards";
 
 function Shop() {
     return (
         <div className="shop">
             <Nav/>
-            <h2>Shop Page</h2>
+            <Cards/>
         </div>
     );
     }

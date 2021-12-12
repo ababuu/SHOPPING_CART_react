@@ -1,6 +1,6 @@
 import Nav from "./Nav";
 import Cards from "./Cards";
-
+import { useEffect,useState } from 'react';
 
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
     return (
         <div className="home">
             <Nav/>
-            <Cards/>
+            
         </div>
     );
     }

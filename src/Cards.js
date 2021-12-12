@@ -17,13 +17,13 @@ function Cards() {
             <ul className='cards'>
             {products.map((product)=>{
             return (
-                
-                    <li className="cards_item">
+                <li key={product.id} className="cards_item">
                         <div className="card">
                             <div className="card_image"><img alt='' src={product.image}/></div>
                             <div className="card_content">
-                            <h2 className="card_title">Card Grid Layout</h2>
-                            <p className="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                            <h2 className="card_title">{product.title}</h2>
+                            <p className="card_text">{product.description}</p>
+                            <h3 className="card_title">{product.price}$</h3>
                             <button className="btn card_btn">Add To Cart</button>
                             </div>
                         </div>
