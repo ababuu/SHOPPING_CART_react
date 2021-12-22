@@ -3,14 +3,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Shop from './Shop';
 
-
 function App() {
   
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/shop' element={<Shop/>}/>
+        <Route exact path='/' element={<Home />}/>
+        <Route exact path='/shop' element={<Shop/>}/>
       </Routes>
     </BrowserRouter>
   );

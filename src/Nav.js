@@ -4,14 +4,11 @@ function Nav() {
     return (
         <nav>
             <ul className='nav_list'>
-                <NavLink className='nav_link' to='/' activeClassName="selected">
+                <NavLink className='nav_link' to='/'>
                     <li>Home</li>
                 </NavLink>
                 <NavLink className='nav_link' to='/shop'>
                     <li>Shop</li>
-                </NavLink>
-                <NavLink className='nav_link' to='/'>
-                    <li>Cart</li>
                 </NavLink>
             </ul>
         </nav>
