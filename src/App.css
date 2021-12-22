@@ -189,6 +189,7 @@ img {
   transform: translate(-50%, -50%);
   background-color: #ffffff;
   border-radius: 15px;
+  overflow:auto;
 }
 .close-btn {
   position: absolute;
@@ -249,4 +250,14 @@ img {
   border: solid 0.5px lightgray;
   padding: 2px;
   margin-top: 5px;
+}
+input {
+  max-width: 10 px !important;
+}
+.cartContent{
+  position: fixed;
+  right: 25px;
+  bottom: 65px;
+  z-index: 1;
+  color: red;
 }

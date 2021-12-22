@@ -2,6 +2,7 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import { useEffect,useState } from 'react';
 import cartImage from './cart.png'
+import NumericInput from 'react-numeric-input';
 
 function Cards() {
     const [products,setProducts]=useState([]);
@@ -23,16 +24,19 @@ function Cards() {
         setCart(hardCopy);
     }
     const cartItems = cart.map((el) => (
+
         <div className='cart_items' key={el.id}>
             <img className='cart_image' src={el.image}></img>
             {`${el.title}: $${el.price}`}
+            <NumericInput min={0} max={100} value={1}/>
             <input type="submit" value="remove"  onClick={()=>removeFromCart(el)}/>
         </div>
     ));
-    
+    const cartContent= cartItems.length;
+    console.log(cartContent);
     return (
         <div className='main'>
-            <div onClick={()=>setShowCart(true)}><img className='cartImage' src={cartImage}/></div>
+            <div onClick={()=>setShowCart(true)}><img className='cartImage' src={cartImage}/><h3 className='cartContent'>{cartContent}</h3></div>
             <ul className='cards'>
             {products.map((product)=>{
             return (
