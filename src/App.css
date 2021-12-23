@@ -5,8 +5,17 @@
 }
 body{
     background: white;
+    font-family: 'Quicksand', serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding-top: 60px;
 }
-
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
 nav{
     min-height: 10vh;
     display: flex;
@@ -17,7 +26,6 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
     width: 100%;
 }
 .nav_list{
@@ -60,13 +68,7 @@ h2{
 
 
 
-body {
-  color: #272727;
-  font-family: 'Quicksand', serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0;
-}
+
 
 .main{
   max-width: 1200px;

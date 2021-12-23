@@ -29,6 +29,7 @@ function Cards() {
             <img className='cart_image' src={el.image}></img>
             {`${el.title}: $${el.price}`}
             <NumericInput min={0} max={100} value={1}/>
+            <br></br>
             <input type="submit" value="remove"  onClick={()=>removeFromCart(el)}/>
         </div>
     ));
@@ -36,6 +37,7 @@ function Cards() {
     console.log(cartContent);
     return (
         <div className='main'>
+            <br></br>
             <div onClick={()=>setShowCart(true)}><img className='cartImage' src={cartImage}/><h3 className='cartContent'>{cartContent}</h3></div>
             <ul className='cards'>
             {products.map((product)=>{
@@ -57,10 +59,10 @@ function Cards() {
         </ul>
         {showCart ? <div className='popup-wrapper'>
         <div className='popup'>
-          {cartItems}
+            {cartItems}
         <button className='close-btn' onClick={()=>setShowCart(false)}></button>
         </div>
-      </div> : null}
+        </div> : null}
         </div>
         
     );
