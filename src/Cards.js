@@ -8,33 +8,57 @@ function Cards() {
     const [products,setProducts]=useState([]);
     const [cart, setCart] = useState([]);
     const [showCart,setShowCart]=useState(false);
+    const [total,setTotal]=useState(0);
+
     useEffect(() => {
         fetchProducts()
     }, [])
+
+    useEffect(()=>{
+        totalPrice()
+    },[cart]);
+
     const fetchProducts=async ()=>{
         let fetchedProducts=await fetch('https://fakestoreapi.com/products').then(res=>res.json());
         setProducts(fetchedProducts);
     }
+
     const addToCart=(el)=>{
         setCart([...cart,el]);
     }
+
     const removeFromCart=(el)=>{
         let hardCopy = [...cart];
         hardCopy = hardCopy.filter((cartItem) => cartItem.id !== el.id);
         setCart(hardCopy);
     }
-    const cartItems = cart.map((el) => (
 
+    const cartItems = cart.map((el) => (
         <div className='cart_items' key={el.id}>
             <img className='cart_image' src={el.image}></img>
             {`${el.title}: $${el.price}`}
-            <NumericInput min={0} max={100} value={1}/>
-            <br></br>
-            <input type="submit" value="remove"  onClick={()=>removeFromCart(el)}/>
+            <input className='delete-btn' type="submit" value="remove"  onClick={()=>removeFromCart(el)}/>
         </div>
     ));
+
+    const totalPrice=()=>{
+        let totalVal=0;
+        for(let i=0 ; i<cart.length; i++){
+            totalVal+=cart[i].price;
+        }
+        setTotal(totalVal);
+    }
+    
     const cartContent= cartItems.length;
-    console.log(cartContent);
+    const ColoredLine = ({ color }) => (
+        <hr
+            style={{
+                color: color,
+                backgroundColor: color,
+                height: .5
+            }}
+        />
+    );
     return (
         <div className='main'>
             <br></br>
@@ -59,7 +83,25 @@ function Cards() {
         </ul>
         {showCart ? <div className='popup-wrapper'>
         <div className='popup'>
-            {cartItems}
+        <div id="cart-header">
+            <span id="cart-title">Shopping Cart</span>
+        </div>
+        <div>
+        {cart.map((item) => (
+        <div>
+            <th key={item.id}>
+            <td><img className='cart_image' src={item.image}/></td>
+            <td>{item.title} </td>
+            <div><td>Price: ${item.price}</td></div>
+            <div><td>Quantity: </td></div>
+        </th>
+        <ColoredLine color="gray" />
+        </div>
+      ))}
+        </div>
+        <div>
+        </div>
+            <h1 className='total'>Total: ${total}</h1>
         <button className='close-btn' onClick={()=>setShowCart(false)}></button>
         </div>
         </div> : null}
