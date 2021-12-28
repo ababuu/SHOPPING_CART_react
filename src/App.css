@@ -194,7 +194,7 @@ img {
   right: 0;
   bottom: 0;
   background-color: rgba(2, 2, 2, 0.685);
-  
+ 
 }
 
 .popup {
@@ -295,4 +295,10 @@ img {
 }
 #cart-title {
   font-size: 2em;
+}
+input[type=number]{
+  padding: 5px;
+  width: 70px;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }

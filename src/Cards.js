@@ -9,6 +9,7 @@ function Cards() {
     const [cart, setCart] = useState([]);
     const [showCart,setShowCart]=useState(false);
     const [total,setTotal]=useState(0);
+    const [quantity,setquantity]=useState(1);
 
     useEffect(() => {
         fetchProducts()
@@ -93,7 +94,7 @@ function Cards() {
             <td><img className='cart_image' src={item.image}/></td>
             <td>{item.title} </td>
             <div><td>Price: ${item.price}</td></div>
-            <div><td>Quantity: </td></div>
+        <div><td>Quantity: <input type='number' onInput={e=>setquantity(e.target.value)} min="1" max="9" step="1" /></td></div>
         </th>
         <ColoredLine color="gray" />
         </div>
@@ -101,8 +102,8 @@ function Cards() {
         </div>
         <div>
         </div>
-            <h1 className='total'>Total: ${total}</h1>
-        <button className='close-btn' onClick={()=>setShowCart(false)}></button>
+            <h1 className='total'>Total: ${quantity * total}</h1>
+            <button className='close-btn' onClick={()=>setShowCart(false)}></button>
         </div>
         </div> : null}
         </div>
