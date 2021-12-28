@@ -79,7 +79,6 @@ function Cards() {
                         </div>
                     </li>
                     )
-                    
         })}
         </ul>
         {showCart ? <div className='popup-wrapper'>
@@ -89,16 +88,16 @@ function Cards() {
         </div>
         <div>
         {cart.map((item) => (
-        <div>
-            <th key={item.id}>
-            <td><img className='cart_image' src={item.image}/></td>
-            <td>{item.title} </td>
-            <div><td>Price: ${item.price}</td></div>
-        <div><td>Quantity: <input type='number' onInput={e=>setquantity(e.target.value)} min="1" max="9" step="1" /></td></div>
-        </th>
-        <ColoredLine color="gray" />
-        </div>
-      ))}
+            <div>
+                <th key={item.id}>
+                <td><img className='cart_image' src={item.image}/></td>
+                <td>{item.title} </td>
+                <div><td>Price: ${item.price}</td></div>
+            <div><td>Quantity: <input type='number' onInput={e=>setquantity(e.target.value)} min="1" max="9" step="1" /></td></div>
+            </th>
+            <ColoredLine color="gray" />
+            </div>
+        ))}
         </div>
         <div>
         </div>
@@ -109,6 +108,5 @@ function Cards() {
         </div>
         
     );
-    }
-
+        }
 export default Cards;
