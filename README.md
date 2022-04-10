@@ -1,3 +1,11 @@
+A shopping page that fetches data from a free API called "Fake Store API". Here is a [live preview](https://shopping-cart-react-19ff0.web.app/shop)
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
