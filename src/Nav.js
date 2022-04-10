@@ -7,7 +7,7 @@ function Nav() {
                 <NavLink className='nav_link' to='/'>
                     <li>Home</li>
                 </NavLink>
-                <NavLink className='nav_link' to='/shop'>
+                <NavLink className='nav_link' to='/products'>
                     <li>Shop</li>
                 </NavLink>
             </ul>
